@@ -1,19 +1,19 @@
-const decrementBtnEl = document.querySelector('[data-action="decrement"]');
-const incrementBtnEl = document.querySelector('[data-action="increment"]');
+const decrementButton = document.querySelector('[data-action="increment"]');
+const incrementButton = document.querySelector('[data-action="decrement"]');
 const valueEl = document.querySelector("#value");
 
 let counterValue = 0;
 
-decrementBtnEl.addEventListener("click", onDecrementBtnClick);
+decrementButton.addEventListener("click", onDecrementButtonClick);
 
-incrementBtnEl.addEventListener("click", onIncrementBtnClick);
+incrementButton.addEventListener("click", onIncrementButtonClick);
 
-function onDecrementBtnClick() {
-  counterValue -= 1;
+function onDecrementButtonClick() {
+  counterValue++;
   valueEl.textContent = counterValue;
 }
 
-function onIncrementBtnClick() {
-  counterValue += 1;
+function onIncrementButtonClick() {
+  counterValue--;
   valueEl.textContent = counterValue;
 }

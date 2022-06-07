@@ -13,25 +13,20 @@ const images = [
   },
 ];
 
-const imagesContainerEl = document.querySelector("ul.gallery");
-imagesContainerEl.style.display = "flex";
-imagesContainerEl.style.justifyContent = "space-between";
-imagesContainerEl.style.listStyle = "none";
-imagesContainerEl.style.width = "1200px";
-imagesContainerEl.style.paddingLeft = "0px";
+const imagesContainerElement = document.querySelector("ul.gallery");
 
-const picturesListEl = [];
+const imagesList = [];
 
-for (let image of images) {
-  const imageEl = `<li><img src=${image.url} alt = "${image.alt}" height=220px></li>`;
+images.map(element => imagesList.push(`<li><img src=${element.url} alt = "${element.alt}" height=200px></li>`));
 
-  picturesListEl.push(imageEl);
-}
+console.log(imagesContainerElement);
+console.log(imagesList);
 
-imagesContainerEl.insertAdjacentHTML("afterbegin", picturesListEl.join(""));
+imagesContainerElement.insertAdjacentHTML("afterbegin", imagesList.join(""));
 
-const picturesEl = document.querySelectorAll("img");
+const bodyImages = document.querySelectorAll("img");
 
-for (let pictureEl of picturesEl) {
-  pictureEl.style.display = "block";
+for (let img of bodyImages) {
+  img.style.display = "block";
+  img.style.marginLeft = "10px";
 }
