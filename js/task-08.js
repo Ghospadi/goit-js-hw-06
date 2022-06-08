@@ -8,12 +8,12 @@ function onSubmit(event) {
   event.preventDefault();
   const formElements = event.currentTarget.elements;
   const email = formElements.email.value;
-  const password = formElements.password.value;
+  const password = formElements.password.value.trim();
   if (emailEl.value.trim() === "" || passwordEl.value.trim() === "") {
      return alert("Please complete all fields");
   }
 
-  const Data = { email: email, password: password };
+  const Data = { email, password };
   console.log(Data);
   event.currentTarget.reset();
 }
