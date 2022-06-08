@@ -9,7 +9,7 @@ function onSubmit(event) {
   const formElements = event.currentTarget;
   const email = formElements.email.value;
   const password = formElements.password.value;
-  if (emailEl.value === "" || passwordEl.value === "") {
+  if (emailEl.value.trim() === "" || passwordEl.value.trim() === "") {
      return alert("Please complete all fields");
   }
 
