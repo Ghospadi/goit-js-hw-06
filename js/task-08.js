@@ -6,17 +6,14 @@ formEl.addEventListener("submit", onSubmit);
 
 function onSubmit(event) {
   event.preventDefault();
-  const formElements = event.currentTarget.elements;
+  const formElements = event.currentTarget;
   const email = formElements.email.value;
   const password = formElements.password.value;
   if (emailEl.value === "" || passwordEl.value === "") {
-    alert("Please complete all fields");
+     return alert("Please complete all fields");
   }
 
-  const Data = {
-    email,
-    password,
-  };
+  const Data = { email: email, password: password };
   console.log(Data);
   event.currentTarget.reset();
 }
